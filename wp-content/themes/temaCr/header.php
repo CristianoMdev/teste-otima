@@ -13,8 +13,12 @@
     <?php wp_head(); ?>
     
 </head>
-    <body>
 
+<body>
+
+    <?php
+        if(is_home()):
+    ?>
 
 <div class="header">
 
@@ -22,11 +26,41 @@
         <h1> <a href="<?php echo site_url(); ?>" title="<?php bloginfo('name'); ?>">CRMDEV</a> </h1>
 
         <div class="infor">
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur molestias exercitationem omnis voluptatem magnam excepturi assumenda? Quisquam voluptate nostrum perferendis, eligendi ea esse voluptas, maiores totam sint eveniet quam culpa.</p>
-            <a href="#" class="custom-botao">Saiba Mais</a>
+            
+            <?php
+                $args =array('post_type'=> 'page', 'pagename'=> 'sobre');
+                $my_page = get_posts( $args );
+            ?>
+          <?php if($my_page) : foreach($my_page as $post ) : setup_postdata( $post ); ?>
+
+          <<h2><?php the_title(); ?></h2>
+          <?php the_excerpt(); ?>
+            
+          <a href="<?php the_permalink(); ?>" class="custom-botao">Saiba Mais</a>
+            <?php endforeach; ?>
+
+            <?php else: ?>
+                <p>Nenhum Conteudo Inserido</p>
+            <?php endif; ?>
+
         </div>
     </div>
 
 </div>
-  
+        
+<?php
+        else:
+    ?>
+            <<div class="header-page">
+              <div class="wrap">
+                <h1> <a href="<?php echo site_url(); ?>" title="<?php bloginfo('name'); ?>">CRMDEV</a> </h1>
+              </div>
+              <div class="bg-page">
+                <div class="wrap">
+                    <h2><?php the_title(); ?></h2>
+                </div>
+              </div>
+            </div>
+    <?php
+        endif;
+    ?>

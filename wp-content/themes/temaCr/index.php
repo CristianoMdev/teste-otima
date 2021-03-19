@@ -6,26 +6,22 @@
 
         <div class="box-liste-posts">
 
-            <div class="liste-posts">
-                <img src="<?php bloginfo( 'template_directory' ) ?>/assets/images/img-post1.jpg " alt="">
+        <?php 
+            $args = array('post_type'=>'post', 'showposts'=> 2);
+            $my_posts = get_posts( $args );       
+        ?>
+        <?php $cont = 1; if( $my_posts ) : foreach( $my_posts as $post ) : setup_postdata( $post ); ?>
+            <div class="liste-posts <?php if( $cont == 2 ) echo "segundo-post"; ?>">
+
+                <?php the_post_thumbnail(); ?>
 
               <div class="box-content-post">
-                <h2>Lorem ipsum dolor</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium molestias velit sapiente exercitationem est quisquam eaque, ratione dolore odio esse, nemo accusamus doloremque quae eveniet recusandae architecto placeat rerum quia!</p>
-                <a href="#" class="custom-botao">Leia mais</a>
+                <h2><?php the_title(); ?></h2>
+                <?php the_excerpt(); ?>
+                <a href="<?php the_permalink(); ?>" class="custom-botao">Leia mais</a>
               </div>
             </div>
-
-            <div class="liste-posts2">
-                <img src="<?php bloginfo( 'template_directory' ) ?>/assets/images/img-post2.jpg " alt="">
-                
-              <div class="box-content-post">
-                <h2>Lorem ipsum dolor</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium molestias velit sapiente exercitationem est quisquam eaque, ratione dolore odio esse, nemo accusamus doloremque quae eveniet recusandae architecto placeat rerum quia!</p>
-                <a href="#" class="custom-botao">Leia mais</a>
-              </div>
-            </div>  
-
+          <?php $cont ++; endforeach; endif; ?>
         </div>
     </div>
 </div>
