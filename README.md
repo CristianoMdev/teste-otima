@@ -1,4 +1,4 @@
 # teste-otima
- Teste da Otima Ideias
+ Teste da Otima Ideia
 
 Infelizmente ainda não está pronto.  
