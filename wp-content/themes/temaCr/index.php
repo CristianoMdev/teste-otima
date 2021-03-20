@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<div class="clear"></div>
 <div class="blog">
     <div class="wrap">
         <h2>BLOG</h2>

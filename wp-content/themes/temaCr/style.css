@@ -83,7 +83,7 @@ body{
 /*BLOG*/
 .blog{
     padding: 10px 0;
-    background-color: teal;
+    background-color: rgb(255, 255, 255);
 }
 
 .blog h2{
