@@ -20,15 +20,21 @@ body{
     background-color: rgb(255, 255, 255);
 }
 
+.clear{
+    clear: both;
+}
+
 /* div header*/
 .header{
     height: 900px;
     padding: 10px 0;
     background: url(assets/images/espadas.jpeg) center top;
+    color: tomato;
 }
 
 .header h1{
     margin: 0;
+    color: tomato;
 }
 
 .header h1 a{
@@ -42,15 +48,16 @@ body{
     margin: 0 auto;
     width: 860px;
     text-align: center;
+    color: tomato;
 }
 
 .header .infor h2{
-    color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
     font-size: 30px;
 }
 
 .header .infor p{
-    color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
     font: lighter;
     font-size: 18px;
 }
@@ -76,6 +83,7 @@ body{
 /*BLOG*/
 .blog{
     padding: 10px 0;
+    background-color: teal;
 }
 
 .blog h2{
@@ -133,27 +141,44 @@ body{
 
 .header-page h1{
     margin: 0;
+    color: tomato;
 }
 
 .header-page h1 a{
-    color: white;
+    color: rgb(253, 0, 0);
     text-decoration: none;
 }
 
 .bg-page{
-    background: url(assets/images/espadas1.jpeg) center top;
+    background: url(assets/images/espadas.jpeg) center top;
     display: block;
     height: 365px;
+    color: rgb(255, 38, 0);
 }
 
 .bg-page h2{
     padding-top:  40px;
-    color: white;
+    color: rgb(255, 0, 0);
     text-transform: uppercase;
     font-weight: normal;
     font-size: 30px;
     margin: 0;
 }
+
+/*Galeria*/
+
+.galeria{
+    background: rgb(0, 0, 0);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.galeria h2, .galeria p{
+    color: white;
+    text-align: center;
+}
+
+
 
 /*Footer*/
 

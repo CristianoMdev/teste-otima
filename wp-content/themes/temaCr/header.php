@@ -58,6 +58,7 @@
               <div class="bg-page">
                 <div class="wrap">
                     <h2><?php the_title(); ?></h2>
+                    <?php custom_breadcrumbs(); ?>
                 </div>
               </div>
             </div>

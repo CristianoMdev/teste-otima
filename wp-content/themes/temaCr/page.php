@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php custom_breadcrumbs(); ?>
+
  <div class="content">
      <div class="wrap">
          <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
